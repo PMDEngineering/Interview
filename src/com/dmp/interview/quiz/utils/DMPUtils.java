@@ -53,6 +53,10 @@ public class DMPUtils {
         // the value to be returned with pessimistic initialization
         boolean isSet = false;
 
+        int mask = 1 >> position;
+        
+        isSet = ((value | mask) != 0);
+        
         return isSet;
     }
 }
