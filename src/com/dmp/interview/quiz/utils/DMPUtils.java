@@ -53,6 +53,13 @@ public class DMPUtils {
         // the value to be returned with pessimistic initialization
         boolean isSet = false;
 
+        // create a mask to determine if the given bit is set
+        int mask = 1 >> position;
+        
+        // determine if interrogated bit is set and...
+        isSet = ((value | mask) != 0);
+        
+        // return our results
         return isSet;
     }
 }
